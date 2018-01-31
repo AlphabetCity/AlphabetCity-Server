@@ -83,33 +83,18 @@ const setSaltAndPassword = user => {
 const addUserItems = (user) => {
 
   return Item.findAndCountAll()
-<<<<<<< HEAD
     .then(obj => obj.count)
     .then(count => {
-      let itemIds = [];
+      let itemIds = []
       for (let i = 1; i <= count; i++) {
         itemIds.push(i)
       }
       return itemIds
     })
     .then(idArray => {
-      return user.setItems(idArray);
+      return user.setItems(idArray)
     })
-    .catch(err => console.log(err));
-=======
-  .then(obj => obj.count)
-  .then(count => {
-    let itemIds = []
-    for (let i = 1; i <= count; i++) {
-      itemIds.push(i)
-    }
-    return itemIds
-  })
-  .then(idArray => {
-    return user.setItems(idArray)
-  })
-  .catch(err => console.log(err))
->>>>>>> b3f97115fb8a65f3f0039454220c0976ae71750c
+    .catch(err => console.log(err))
 }
 
 User.beforeCreate(setSaltAndPassword)
