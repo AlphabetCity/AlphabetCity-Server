@@ -5,10 +5,8 @@ const {
   UserItem
 } = require('../server/db/models')
 
-async function seed() {
-  await db.sync({
-    force: true
-  })
+const seed = async () => {
+  await db.sync({})
   console.log('db synced!')
 
   const items = await Promise.all([
@@ -216,8 +214,6 @@ async function seed() {
 
 }
 
-
-
 seed()
   .then(() => {
     console.log('closing db connection')
@@ -230,9 +226,4 @@ seed()
     process.exitCode = 1
   })
 
-/*
- * note: everything outside of the async function is totally synchronous
- * The console.log below will occur before any of the logs that occur inside
- * of the async function
- */
 console.log('seeding...')
