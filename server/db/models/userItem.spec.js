@@ -86,7 +86,7 @@ describe('User Item join table', () => {
     })
 
 
-      it('displays if item is hidden', function () {
+      it('displays if item is ', function () {
         expect(userItem1.hidden).to.equal(true)
         expect(userItem2.hidden).to.equal(false)
       })
