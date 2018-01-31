@@ -16,8 +16,8 @@ const UserItem = db.define('userItem', {
   hidden: {
     type: Sequelize.VIRTUAL,
     get () {
-      if (this.getDataValue('latitude')) return true;
-      else return false;
+      if (this.getDataValue('latitude')) return true
+      else return false
     }
   },
 })

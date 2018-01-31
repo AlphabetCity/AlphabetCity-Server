@@ -2,7 +2,7 @@ const crypto = require('crypto')
 const Sequelize = require('sequelize')
 const db = require('../db')
 const UserItem = require('./userItem')
-const Item = require('./item');
+const Item = require('./item')
 
 const User = db.define('user', {
   userName: {
@@ -69,7 +69,6 @@ User.getUserAndItemsById = function (id) {
 /**
  * hooks
  */
-
 const setSaltAndPassword = user => {
   if (user.changed('password')) {
     user.salt = User.generateSalt()
@@ -82,16 +81,16 @@ const addUserItems = (user) => {
   return Item.findAndCountAll()
   .then(obj => obj.count)
   .then(count => {
-    let itemIds = [];
+    let itemIds = []
     for (let i = 1; i <= count; i++) {
       itemIds.push(i)
     }
     return itemIds
   })
   .then(idArray => {
-    return user.setItems(idArray);
+    return user.setItems(idArray)
   })
-  .catch(err => console.log(err));
+  .catch(err => console.log(err))
 }
 
 User.beforeCreate(setSaltAndPassword)
@@ -99,8 +98,8 @@ User.beforeUpdate(setSaltAndPassword)
 
 // after a user is created, we create one of each item with that user's id (these are the items the user starts the game with)
 User.afterCreate('addUserItems', (user) => {
-  return addUserItems(user);
-});
+  return addUserItems(user)
+})
 
 
 module.exports = User
