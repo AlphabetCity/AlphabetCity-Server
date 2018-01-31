@@ -108,8 +108,8 @@ async function seed() {
 
   const userItems = await Promise.all([
     UserItem.update({
-      longitude: 40.704761,
-      latitude: -74.009133
+      latitude: 40.704761,
+      longitude: -74.009133
     },
       {
       where: {
@@ -117,8 +117,8 @@ async function seed() {
       }
     }),
     UserItem.update({
-      longitude: 40.704966,
-      latitude: -74.009491
+      latitude: 40.704966,
+      longitude: -74.009491
     },
       {
         where: {
@@ -126,8 +126,8 @@ async function seed() {
         }
       }),
     UserItem.update({
-      longitude: 40.704572,
-      latitude: -74.009200
+      latitude: 40.704572,
+      longitude: -74.009200
     },
       {
         where: {
@@ -135,8 +135,8 @@ async function seed() {
         }
       }),
     UserItem.update({
-      longitude: 40.704392,
-      latitude: -74.009090
+      latitude: 40.704392,
+      longitude: -74.009090
     },
       {
         where: {
@@ -144,8 +144,8 @@ async function seed() {
         }
       }),
     UserItem.update({
-      longitude: 40.704132,
-      latitude: -74.009255
+      latitude: 40.704132,
+      longitude: -74.009255
     },
       {
         where: {
@@ -153,8 +153,8 @@ async function seed() {
         }
       }),
     UserItem.update({
-      longitude: 40.704299,
-      latitude: -74.009122
+      latitude: 40.704299,
+      longitude: -74.009122
     },
       {
         where: {
@@ -162,8 +162,8 @@ async function seed() {
         }
       }),
     UserItem.update({
-      longitude: 40.704951,
-      latitude: -74.009132
+      latitude: 40.704951,
+      longitude: -74.009132
     },
       {
         where: {
@@ -172,8 +172,8 @@ async function seed() {
       })
     ,
     UserItem.update({
-      longitude: 40.7419971,
-      latitude: -73.9246365
+      latitude: 40.7419971,
+      longitude: -73.9246365
     },
       {
         where: {
@@ -182,8 +182,8 @@ async function seed() {
       })
     ,
     UserItem.update({
-      longitude: 40.7419472,
-      latitude: -73.9246539
+      latitude: 40.7419472,
+      longitude: -73.9246539
     },
       {
         where: {
@@ -192,8 +192,8 @@ async function seed() {
       })
     ,
     UserItem.update({
-      longitude: 40.7411973,
-      latitude: -73.9243364
+      latitude: 40.7411973,
+      longitude: -73.9243364
     },
       {
         where: {
@@ -202,8 +202,8 @@ async function seed() {
       })
     ,
     UserItem.update({
-      longitude: 40.7419972,
-      latitude: -73.9246364
+      latitude: 40.7419972,
+      longitude: -73.9246364
     },
       {
         where: {
