@@ -14,4 +14,3 @@ router.get('/', (req, res, next) => {
     .then((userItems) => res.json(userItems))
     .catch(next)
 })
-
