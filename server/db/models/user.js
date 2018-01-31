@@ -14,6 +14,10 @@ const User = db.define('user', {
       len: [2, 15]
     }
   },
+  icon: {
+    type: Sequelize.STRING,
+    defaultValue: 'http://gazettereview.com/wp-content/uploads/2016/09/what-happened-to-lance-bass-nsync-203x300.png'
+  },
   email: {
     type: Sequelize.STRING,
     unique: true,
@@ -79,18 +83,18 @@ const setSaltAndPassword = user => {
 const addUserItems = (user) => {
 
   return Item.findAndCountAll()
-  .then(obj => obj.count)
-  .then(count => {
-    let itemIds = []
-    for (let i = 1; i <= count; i++) {
-      itemIds.push(i)
-    }
-    return itemIds
-  })
-  .then(idArray => {
-    return user.setItems(idArray)
-  })
-  .catch(err => console.log(err))
+    .then(obj => obj.count)
+    .then(count => {
+      let itemIds = []
+      for (let i = 1; i <= count; i++) {
+        itemIds.push(i)
+      }
+      return itemIds
+    })
+    .then(idArray => {
+      return user.setItems(idArray)
+    })
+    .catch(err => console.log(err))
 }
 
 User.beforeCreate(setSaltAndPassword)
