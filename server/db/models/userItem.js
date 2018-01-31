@@ -7,10 +7,10 @@ const UserItem = db.define('userItem', {
     primaryKey: true,
     autoIncrement: true
   },
-  longitude: {
+  latitude: {
     type: Sequelize.DOUBLE
   },
-  latitude: {
+  longitude: {
     type: Sequelize.DOUBLE
   },
   hidden: {
