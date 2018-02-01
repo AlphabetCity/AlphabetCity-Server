@@ -36,7 +36,6 @@ const User = db.define('user', {
     type: Sequelize.INTEGER,
     defaultValue: 0
   }
-  //TODO - get amount of items in satchel
 })
 
 
