@@ -46,15 +46,28 @@ router.delete('/:userId', (req, res, next) => {
     .catch(next)
 })
 
-// get all items for a user
+// get all items for a user, or query to see if hidden (if not hidden, item is in satchel)
 router.get('/:userId/items', (req, res, next) => {
-  UserItem.findAll({
-    where: {
-    userId: req.params.userId
-  }})
-    .then(items => res.json(items))
-    .catch(next)
+  if (req.query.hidden) {
+    UserItem.findAll({
+      where: {
+        userId: req.params.userId
+      }
+    })
+      .then(allItems => allItems.filter(item => item.hidden.toString() === req.query.hidden))
+      .then(selectedItems => res.json(selectedItems))
+      .catch(next)
+  } else {
+    UserItem.findAll({
+      where: {
+        userId: req.params.userId
+      }
+    })
+      .then(items => res.json(items))
+      .catch(next)
+  }
 })
+
 
 // update single item
 router.put('/:userId/items/:itemId', (req, res, next) => {
