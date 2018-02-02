@@ -73,15 +73,3 @@ router.get('/:userId/items', (req, res, next) => {
 })
 
 
-
-// update single item
-router.put('/:userId/items/:itemId', (req, res, next) => {
-  UserItem.update(req.body, {
-    where: {
-      id: req.params.itemId
-    }
-  })
-    .then(() => res.sendStatus(200))
-    .catch(next)
-})
-
