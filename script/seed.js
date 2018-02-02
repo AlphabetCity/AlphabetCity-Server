@@ -3,52 +3,52 @@ const path = require('path')
 const {
   User,
   Item,
-  UserItem
+  ItemCategory
 } = require('../server/db/models')
 
 const seed = async () => {
-  await db.sync({})
+  await db.sync({force: true})
   console.log('db synced!')
 
-  const items = await Promise.all([
-    Item.create({
+  const itemCategories = await Promise.all([
+    ItemCategory.create({
       name: 'Peach',
       points: 1,
       modelUrl: 'https://www.cgtrader.com/free-3d-models/food/fruit/apricot-lowpoly',
       emoji: 'https://cdn2.iconfinder.com/data/icons/fruity-vectors/1024/ColoredBeans_Kiwi2-256.png'
 
     }),
-    Item.create({
+    ItemCategory.create({
       name: 'Apple',
       points: 14,
       modelUrl: 'https://www.cgtrader.com/free-3d-print-models/art/scans-replicas/red-apple--3',
       emoji: 'https://cdn2.iconfinder.com/data/icons/fruity-vectors/1024/ColoredBeans_Kiwi2-256.png'
     }),
-    Item.create({
+    ItemCategory.create({
       name: 'Strawberry',
       points: 98,
       modelUrl: 'https://www.cgtrader.com/free-3d-models/food/fruit/strawberry-e58fc22b7ea3c5bc232d0c2229c6971c',
       emoji: 'https://cdn2.iconfinder.com/data/icons/fruity-vectors/1024/ColoredBeans_Kiwi2-256.png'
     }),
-    Item.create({
+    ItemCategory.create({
       name: 'Plum',
       points: 45,
       modelUrl: 'https://www.cgtrader.com/free-3d-models/food/fruit/ameixa-plum-85k',
       emoji: 'https://cdn2.iconfinder.com/data/icons/fruity-vectors/1024/ColoredBeans_Kiwi2-256.png'
     }),
-    Item.create({
+    ItemCategory.create({
       name: 'Pear',
       points: 54,
       modelUrl: 'https://www.cgtrader.com/free-3d-models/food/fruit/pea-5fd5f53a-f6e1-48df-9e15-7f762044f0ae',
       emoji: 'https://cdn2.iconfinder.com/data/icons/fruity-vectors/1024/ColoredBeans_Kiwi2-256.png'
     }),
-    Item.create({
+    ItemCategory.create({
       name: 'Kiwi',
       points: 80,
       modelUrl: 'https://www.cgtrader.com/free-3d-models/food/fruit/kiwi-fruit-689f61f9-2f0b-465c-a929-fee05bd933aa',
       emoji: 'https://cdn2.iconfinder.com/data/icons/fruity-vectors/1024/ColoredBeans_Kiwi2-256.png'
     }),
-    Item.create({
+    ItemCategory.create({
       name: 'Pineapple',
       points: 7,
       modelUrl: 'https://www.cgtrader.com/free-3d-models/food/fruit/pineapple-c52ea62d728247f7e12f1adb6a8cd212',
@@ -56,7 +56,7 @@ const seed = async () => {
     })
   ])
 
-  console.log(`seeded ${items.length} items`)
+  console.log(`seeded ${itemCategories.length} item categories`)
 
   const users = await Promise.all([
     User.create({
@@ -113,17 +113,17 @@ const seed = async () => {
 
   console.log(`seeded ${users.length} users`)
 
-  const userItems = await Promise.all([
-    UserItem.update({
+  const items = await Promise.all([
+    Item.update({
       latitude: 40.704761,
       longitude: -74.009133
     },
       {
-      where: {
-        id : 1
-      }
-    }),
-    UserItem.update({
+        where: {
+          id : 1
+        }
+      }),
+    Item.update({
       latitude: 40.704966,
       longitude: -74.009491
     },
@@ -132,7 +132,7 @@ const seed = async () => {
           id: 2
         }
       }),
-    UserItem.update({
+    Item.update({
       latitude: 40.704572,
       longitude: -74.009200
     },
@@ -141,7 +141,7 @@ const seed = async () => {
           id: 3
         }
       }),
-    UserItem.update({
+    Item.update({
       latitude: 40.704392,
       longitude: -74.009090
     },
@@ -150,7 +150,7 @@ const seed = async () => {
           id: 4
         }
       }),
-    UserItem.update({
+    Item.update({
       latitude: 40.704132,
       longitude: -74.009255
     },
@@ -159,8 +159,8 @@ const seed = async () => {
           id: 5
         }
       }),
-    UserItem.update({
-      latitude: 40.704299,
+    Item.update({
+      latitude: 40.714299,
       longitude: -74.009122
     },
       {
@@ -168,8 +168,8 @@ const seed = async () => {
           id: 6
         }
       }),
-    UserItem.update({
-      latitude: 40.704951,
+    Item.update({
+      latitude: 40.714951,
       longitude: -74.009132
     },
       {
@@ -178,7 +178,7 @@ const seed = async () => {
         }
       })
     ,
-    UserItem.update({
+    Item.update({
       latitude: 40.7419971,
       longitude: -73.9246365
     },
@@ -188,7 +188,7 @@ const seed = async () => {
         }
       })
     ,
-    UserItem.update({
+    Item.update({
       latitude: 40.7419472,
       longitude: -73.9246539
     },
@@ -198,7 +198,7 @@ const seed = async () => {
         }
       })
     ,
-    UserItem.update({
+    Item.update({
       latitude: 40.7411973,
       longitude: -73.9243364
     },
@@ -208,7 +208,7 @@ const seed = async () => {
         }
       })
     ,
-    UserItem.update({
+    Item.update({
       latitude: 40.7419972,
       longitude: -73.9246364
     },
@@ -219,7 +219,7 @@ const seed = async () => {
       })
   ])
 
-  console.log(`updated ${userItems.length} user items`)
+  console.log(`updated ${items.length}  items`)
 
 }
 
