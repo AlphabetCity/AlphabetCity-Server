@@ -1,12 +1,17 @@
 const User = require('./user')
 const Item = require('./item')
-const UserItem = require('./userItem')
+const ItemCategory = require('./itemCategory')
 
 
 //Associations
 
-Item.belongsToMany(User, {through: UserItem});
-User.belongsToMany(Item, {through: UserItem});
+Item.belongsTo(ItemCategory)
+ItemCategory.hasMany(Item)
+
+//Items will have "getOwner", "setOwner", and "createOwner"
+Item.belongsTo(User)
+//Owners will have "getItems", "setItems", "createItem", "addItem", "addItems", "removeItem", "removeItems", "hasItem", "hasItems", and "countItems"
+User.hasMany(Item)
 
 
 /**
@@ -19,5 +24,5 @@ User.belongsToMany(Item, {through: UserItem});
 module.exports = {
   User,
   Item,
-  UserItem
+  ItemCategory
 }

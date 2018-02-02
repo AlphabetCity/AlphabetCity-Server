@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { User, UserItem, Item } = require('../db/models')
+const { User, Item, ItemCategory } = require('../db/models')
 module.exports = router
 
 
@@ -51,37 +51,25 @@ router.delete('/:userId', (req, res, next) => {
 
 router.get('/:userId/items', (req, res, next) => {
   if (req.query.hidden) {
-    User.findOne({
+    Item.findAll({
       where: {
-        id: req.params.userId
+        userId: req.params.userId
       },
-      include:[{model: Item}]
+      include:[{model: ItemCategory}]
     })
-      .then(user => user.items.filter(item => item.userItem.hidden.toString() === req.query.hidden))
+      .then(items => items.filter(item => item.hidden.toString() === req.query.hidden))
       .then(selectedItems => res.json(selectedItems))
       .catch(next)
   } else {
-    User.findOne({
+    Item.findAll({
       where: {
-        id: req.params.userId
+        userId: req.params.userId
       },
-      include:[{model: Item}]
+      include:[{model: ItemCategory}]
     })
-      .then(user => res.json(user.items))
+      .then(items => res.json(items))
       .catch(next)
   }
 })
 
-
-
-// update single item
-router.put('/:userId/items/:itemId', (req, res, next) => {
-  UserItem.update(req.body, {
-    where: {
-      id: req.params.itemId
-    }
-  })
-    .then(() => res.sendStatus(200))
-    .catch(next)
-})
 
