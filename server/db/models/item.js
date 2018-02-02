@@ -20,6 +20,10 @@ const Item = db.define('item', {
   modelUrl: {
     type: Sequelize.STRING
     //not sure what data will be stored here yet
+  },
+  emoji: {
+    type: Sequelize.STRING,
+    allowNull: false
   }
 })
 
