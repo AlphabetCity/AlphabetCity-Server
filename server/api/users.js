@@ -76,11 +76,7 @@ router.get('/:userId/items', (req, res, next) => {
 
 // update single item
 router.put('/:userId/items/:itemId', (req, res, next) => {
-  UserItem.update({
-    longitude: req.body.longitude,
-    latitude: req.body.latitude
-  },
-    {
+  UserItem.update(req.body, {
     where: {
       id: req.params.itemId
     }
