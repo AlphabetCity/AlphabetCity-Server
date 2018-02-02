@@ -19,7 +19,7 @@ const UserItem = db.define('userItem', {
       if (this.getDataValue('latitude')) return true
       else return false
     }
-  },
+  }
 })
 
 module.exports = UserItem

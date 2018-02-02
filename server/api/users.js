@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { User, UserItem } = require('../db/models')
+const { User, UserItem, Item } = require('../db/models')
 module.exports = router
 
 
@@ -48,26 +48,30 @@ router.delete('/:userId', (req, res, next) => {
 })
 
 // get all items for a user, or query to see if hidden (if not hidden, item is in satchel)
+
 router.get('/:userId/items', (req, res, next) => {
   if (req.query.hidden) {
-    UserItem.findAll({
+    User.findAll({
       where: {
-        userId: req.params.userId
-      }
+        id: req.params.userId
+      },
+      include:[{model: Item}]
     })
       .then(allItems => allItems.filter(item => item.hidden.toString() === req.query.hidden))
       .then(selectedItems => res.json(selectedItems))
       .catch(next)
   } else {
-    UserItem.findAll({
+    User.findAll({
       where: {
-        userId: req.params.userId
-      }
+        id: req.params.userId
+      },
+      include:[{model: Item}]
     })
       .then(items => res.json(items))
       .catch(next)
   }
 })
+
 
 
 // update single item
