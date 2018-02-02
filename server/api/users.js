@@ -51,23 +51,23 @@ router.delete('/:userId', (req, res, next) => {
 
 router.get('/:userId/items', (req, res, next) => {
   if (req.query.hidden) {
-    User.findAll({
+    User.findOne({
       where: {
         id: req.params.userId
       },
       include:[{model: Item}]
     })
-      .then(allItems => allItems.filter(item => item.hidden.toString() === req.query.hidden))
+      .then(user => user.items.filter(item => item.userItem.hidden.toString() === req.query.hidden))
       .then(selectedItems => res.json(selectedItems))
       .catch(next)
   } else {
-    User.findAll({
+    User.findOne({
       where: {
         id: req.params.userId
       },
       include:[{model: Item}]
     })
-      .then(items => res.json(items))
+      .then(user => res.json(user.items))
       .catch(next)
   }
 })
