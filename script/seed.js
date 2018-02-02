@@ -1,4 +1,5 @@
 const db = require('../server/db')
+const path = require('path')
 const {
   User,
   Item,
@@ -13,37 +14,45 @@ const seed = async () => {
     Item.create({
       name: 'Peach',
       points: 1,
-      threeJS: 'https://www.cgtrader.com/free-3d-models/food/fruit/apricot-lowpoly'
+      modelUrl: 'https://www.cgtrader.com/free-3d-models/food/fruit/apricot-lowpoly',
+      emoji: 'https://cdn2.iconfinder.com/data/icons/fruity-vectors/1024/ColoredBeans_Kiwi2-256.png'
+
     }),
     Item.create({
       name: 'Apple',
       points: 14,
-      threeJS: 'https://www.cgtrader.com/free-3d-print-models/art/scans-replicas/red-apple--3'
+      modelUrl: 'https://www.cgtrader.com/free-3d-print-models/art/scans-replicas/red-apple--3',
+      emoji: 'https://cdn2.iconfinder.com/data/icons/fruity-vectors/1024/ColoredBeans_Kiwi2-256.png'
     }),
     Item.create({
       name: 'Strawberry',
       points: 98,
-      threeJS: 'https://www.cgtrader.com/free-3d-models/food/fruit/strawberry-e58fc22b7ea3c5bc232d0c2229c6971c'
+      modelUrl: 'https://www.cgtrader.com/free-3d-models/food/fruit/strawberry-e58fc22b7ea3c5bc232d0c2229c6971c',
+      emoji: 'https://cdn2.iconfinder.com/data/icons/fruity-vectors/1024/ColoredBeans_Kiwi2-256.png'
     }),
     Item.create({
       name: 'Plum',
       points: 45,
-      threeJS: 'https://www.cgtrader.com/free-3d-models/food/fruit/ameixa-plum-85k'
+      modelUrl: 'https://www.cgtrader.com/free-3d-models/food/fruit/ameixa-plum-85k',
+      emoji: 'https://cdn2.iconfinder.com/data/icons/fruity-vectors/1024/ColoredBeans_Kiwi2-256.png'
     }),
     Item.create({
       name: 'Pear',
       points: 54,
-      threeJS: 'https://www.cgtrader.com/free-3d-models/food/fruit/pea-5fd5f53a-f6e1-48df-9e15-7f762044f0ae'
+      modelUrl: 'https://www.cgtrader.com/free-3d-models/food/fruit/pea-5fd5f53a-f6e1-48df-9e15-7f762044f0ae',
+      emoji: 'https://cdn2.iconfinder.com/data/icons/fruity-vectors/1024/ColoredBeans_Kiwi2-256.png'
     }),
     Item.create({
       name: 'Kiwi',
       points: 80,
-      threeJS: 'https://www.cgtrader.com/free-3d-models/food/fruit/kiwi-fruit-689f61f9-2f0b-465c-a929-fee05bd933aa'
+      modelUrl: 'https://www.cgtrader.com/free-3d-models/food/fruit/kiwi-fruit-689f61f9-2f0b-465c-a929-fee05bd933aa',
+      emoji: 'https://cdn2.iconfinder.com/data/icons/fruity-vectors/1024/ColoredBeans_Kiwi2-256.png'
     }),
     Item.create({
       name: 'Pineapple',
       points: 7,
-      threeJS: 'https://www.cgtrader.com/free-3d-models/food/fruit/pineapple-c52ea62d728247f7e12f1adb6a8cd212'
+      modelUrl: 'https://www.cgtrader.com/free-3d-models/food/fruit/pineapple-c52ea62d728247f7e12f1adb6a8cd212',
+      emoji: 'https://cdn2.iconfinder.com/data/icons/fruity-vectors/1024/ColoredBeans_Kiwi2-256.png'
     })
   ])
 
