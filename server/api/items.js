@@ -9,8 +9,9 @@ router.get('/', (req, res, next) => {
       .then(allItems => allItems.filter(item => item.hidden.toString() === req.query.hidden))
       .then(selectedItems => res.json(selectedItems))
       .catch(next)
+  } else {
+    UserItem.findAll()
+      .then((userItems) => res.json(userItems))
+      .catch(next)
   }
-  UserItem.findAll()
-    .then((userItems) => res.json(userItems))
-    .catch(next)
 })

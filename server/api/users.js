@@ -14,10 +14,11 @@ router.get('/', (req, res, next) => {
     User.findAll({ limit: req.query.limit, order: [['score', 'DESC']] })
       .then((topUsers) => res.json(topUsers))
       .catch(next)
+  } else {
+    User.findAll()
+      .then(users => res.json(users))
+      .catch(next)
   }
-  User.findAll()
-    .then(users => res.json(users))
-    .catch(next)
 })
 
 router.get('/:userId', (req, res, next) => {
