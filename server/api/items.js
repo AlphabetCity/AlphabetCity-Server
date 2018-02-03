@@ -1,16 +1,16 @@
 const router = require('express').Router()
-const { Item } = require('../db/models')
+const { Item, ItemCategory } = require('../db/models')
 module.exports = router
 
 
 router.get('/', (req, res, next) => {
   if (req.query.hidden) {
-    Item.findAll()
+    Item.findAll({ include: [{ model: ItemCategory }]})
       .then(allItems => allItems.filter(item => item.hidden.toString() === req.query.hidden))
       .then(selectedItems => res.json(selectedItems))
       .catch(next)
   } else {
-    Item.findAll()
+    Item.findAll({ include: [{ model: ItemCategory }]})
       .then((userItems) => res.json(userItems))
       .catch(next)
   }
