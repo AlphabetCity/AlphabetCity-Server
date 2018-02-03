@@ -124,8 +124,8 @@ const seed = async () => {
         }
       }),
     Item.update({
-      latitude: 40.704966,
-      longitude: -74.009491
+      latitude: 40.7829,
+      longitude: -73.9654
     },
       {
         where: {
@@ -133,8 +133,8 @@ const seed = async () => {
         }
       }),
     Item.update({
-      latitude: 40.704572,
-      longitude: -74.009200
+      latitude: 40.7589,
+      longitude: -73.9851
     },
       {
         where: {
@@ -142,8 +142,8 @@ const seed = async () => {
         }
       }),
     Item.update({
-      latitude: 40.704392,
-      longitude: -74.009090
+      latitude: 40.705576,
+      longitude: -74.013421
     },
       {
         where: {
@@ -151,8 +151,8 @@ const seed = async () => {
         }
       }),
     Item.update({
-      latitude: 40.704132,
-      longitude: -74.009255
+      latitude: 40.7532,
+      longitude: -73.9823
     },
       {
         where: {
@@ -160,8 +160,8 @@ const seed = async () => {
         }
       }),
     Item.update({
-      latitude: 40.714299,
-      longitude: -74.009122
+      latitude: 40.767997,
+      longitude: -73.981934
     },
       {
         where: {
@@ -169,8 +169,8 @@ const seed = async () => {
         }
       }),
     Item.update({
-      latitude: 40.714951,
-      longitude: -74.009132
+      latitude: 40.7480,
+      longitude: -74.0048
     },
       {
         where: {
@@ -179,8 +179,8 @@ const seed = async () => {
       })
     ,
     Item.update({
-      latitude: 40.7419971,
-      longitude: -73.9246365
+      latitude: 40.7359,
+      longitude: -73.9911
     },
       {
         where: {
@@ -189,8 +189,8 @@ const seed = async () => {
       })
     ,
     Item.update({
-      latitude: 40.7419472,
-      longitude: -73.9246539
+      latitude: 40.7587,
+      longitude: -73.9787
     },
       {
         where: {
@@ -199,8 +199,8 @@ const seed = async () => {
       })
     ,
     Item.update({
-      latitude: 40.7411973,
-      longitude: -73.9243364
+      latitude: 40.7127,
+      longitude: -74.0134
     },
       {
         where: {
