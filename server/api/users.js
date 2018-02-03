@@ -33,7 +33,8 @@ router.put('/:userId', (req, res, next) => {
       id: req.params.userId
     }
   })
-    .then(() => res.sendStatus(200))
+    .then(() => User.findById(req.params.userId))
+    .then((user) => res.json(user))
     .catch(next)
 })
 
