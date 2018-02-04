@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
 
-const Item = db.define('item', {
+const Letter = db.define('letter', {
   latitude: {
     type: Sequelize.DOUBLE
   },
@@ -10,11 +10,11 @@ const Item = db.define('item', {
   },
   hidden: {
     type: Sequelize.VIRTUAL,
-    get () {
+    get() {
       if (this.getDataValue('latitude')) return true
       else return false
     }
   }
 })
 
-module.exports = Item
+module.exports = Letter

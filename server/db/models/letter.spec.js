@@ -1,32 +1,32 @@
 const { expect } = require('chai')
 const db = require('../index')
-const { User, Item, ItemCategory } = require('./index')
+const { User, Letter, LetterCategory } = require('./index')
 
 //this doesn't work
 
-describe('User Item join table', () => {
+describe('User Letter join table', () => {
   beforeEach(() => {
     return db.sync({ force: true })
   })
 
   describe('hidden virtual', () => {
-    let userItem1;
-    let userItem2;
+    let userLetter1;
+    let userLetter2;
 
     beforeEach(async () => {
 
-      const items = await Promise.all([
-        ItemCategory.create({
+      const letters = await Promise.all([
+        LetterCategory.create({
           name: 'Peach',
           points: 1,
           threeJS: 'https://www.cgtrader.com/free-3d-models/food/fruit/apricot-lowpoly'
         }),
-        ItemCategory.create({
+        LetterCategory.create({
           name: 'Apple',
           points: 14,
           threeJS: 'https://www.cgtrader.com/free-3d-print-models/art/scans-replicas/red-apple--3'
         }),
-        ItemCategory.create({
+        LetterCategory.create({
           name: 'Strawberry',
           points: 98,
           threeJS: 'https://www.cgtrader.com/free-3d-models/food/fruit/strawberry-e58fc22b7ea3c5bc232d0c2229c6971c'
@@ -52,7 +52,7 @@ describe('User Item join table', () => {
       ])
 
       await Promise.all([
-        Item.update({
+        Letter.update({
           longitude: 40.704761,
           latitude: -74.009133
         },
@@ -61,7 +61,7 @@ describe('User Item join table', () => {
               id: 1
             }
           }),
-        Item.update({
+        Letter.update({
           longitude: 40.704966,
           latitude: -74.009491
         },
@@ -72,23 +72,21 @@ describe('User Item join table', () => {
           })
       ])
 
-
-      await Item.findById(1)
-        .then((item) => {
-          userItem1 = item;
+      await Letter.findById(1)
+        .then((letter) => {
+          userLetter1 = letter;
         })
 
-      await Item.findById(2)
-        .then((item) => {
-          userItem2 = item;
+      await Letter.findById(2)
+        .then((letter) => {
+          userLetter2 = letter;
         })
 
     })
 
-
-      it('displays if item is hidden', function () {
-        expect(userItem1.hidden).to.equal(true)
-        expect(userItem2.hidden).to.equal(false)
-      })
+    it('displays if letter is hidden', function () {
+      expect(userLetter1.hidden).to.equal(true)
+      expect(userLetter2.hidden).to.equal(false)
+    })
   })
 })
