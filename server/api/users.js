@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { User, Letter, LetterCategory } = require('../db/models')
+const { User, Letter, LetterCategory, Word } = require('../db/models')
 const accessControl = require('../utils/accessControl')
 module.exports = router
 
@@ -70,6 +70,18 @@ router.get('/:userId/letters', (req, res, next) => {
       include: [{ model: LetterCategory }]
     })
       .then(letters => res.json(letters))
+      .catch(next)
+  }
+})
+
+router.get('/:userId/words', (req, res, next) => {
+  if (req.query.hidden) {
+    Word.findAll({
+      where: {
+        userId: req.params.userId
+      }
+    })
+      .then(words => res.json(words))
       .catch(next)
   }
 })
