@@ -280,7 +280,7 @@ const seed = async () => {
       })
   ])
 
-  console.log(`updated ${letters.length}  s`)
+  console.log(`updated ${letters.length}  letters`)
 
 }
 
