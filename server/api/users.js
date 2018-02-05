@@ -48,9 +48,9 @@ router.delete('/:userId', (req, res, next) => {
     .catch(next)
 })
 
-// get all items for a user, or query to see if hidden (if not hidden, item is in satchel)
+// get all letters for a user, or query to see if hidden (if not hidden, letter is in satchel)
 
-router.get('/:userId/items', (req, res, next) => {
+router.get('/:userId/letters', (req, res, next) => {
   if (req.query.hidden) {
     Letter.findAll({
       where: {
@@ -58,8 +58,8 @@ router.get('/:userId/items', (req, res, next) => {
       },
       include: [{ model: LetterCategory }]
     })
-      .then(items => items.filter(item => item.hidden.toString() === req.query.hidden))
-      .then(selectedItems => res.json(selectedItems))
+      .then(letters => letters.filter(letter => letter.hidden.toString() === req.query.hidden))
+      .then(selectedLetters => res.json(selectedLetters))
       .catch(next)
   } else {
     Letter.findAll({

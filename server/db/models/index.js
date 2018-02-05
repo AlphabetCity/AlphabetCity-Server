@@ -8,9 +8,9 @@ const LetterCategory = require('./letterCategory')
 Letter.belongsTo(LetterCategory)
 LetterCategory.hasMany(Letter)
 
-//Items will have "getOwner", "setOwner", and "createOwner"
+//Letters will have "getOwner", "setOwner", and "createOwner"
 Letter.belongsTo(User)
-//Owners will have "getItems", "setItems", "createItem", "addItem", "addItems", "removeItem", "removeItems", "hasItem", "hasItems", and "countItems"
+//Owners will have "getLetters", "setLetters", "createLetter", "addLetter", "addLetters", "removeLetter", "removeLetters", "hasLetter", "hasLetters", and "countLetters"
 User.hasMany(Letter)
 
 
