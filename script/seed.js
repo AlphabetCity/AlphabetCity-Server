@@ -3,7 +3,8 @@ const path = require('path')
 const {
   User,
   Letter,
-  LetterCategory
+  LetterCategory,
+  Word
 } = require('../server/db/models')
 
 const seed = async () => {
@@ -283,6 +284,95 @@ const seed = async () => {
   console.log(`updated ${letters.length}  letters`)
 
 }
+
+console.log(`seeded ${letterCategories.length} letter categories`)
+
+const users = await Promise.all([
+  Word.create({
+    latitude: 40.7419972,
+    longitude: -73.9246364,
+    userId: 1,
+    word: "How"
+  }),
+  Word.create({
+    latitude: 40.7419972,
+    longitude: -73.9246364,
+    userId: 2,
+    word: "can"
+  }),
+  Word.create({
+    latitude: 40.7419972,
+    longitude: -73.9246364,
+    userId: 3,
+    word: "you"
+  }),
+  Word.create({
+    latitude: 40.7419972,
+    longitude: -73.9246364,
+    userId: 1,
+    word: "just"
+  }),
+  Word.create({
+    latitude: 40.7419972,
+    longitude: -73.9246364,
+    userId: 2,
+    word: "leave"
+  }),
+  Word.create({
+    latitude: 40.7419972,
+    longitude: -73.9246364,
+    userId: 3,
+    word: "me"
+  }),
+  Word.create({
+    latitude: 40.7419972,
+    longitude: -73.9246364,
+    userId: 4,
+    word: "standing"
+  }),
+  Word.create({
+    latitude: 40.7419972,
+    longitude: -73.9246364,
+    userId: 5,
+    word: "alone"
+  }),
+  Word.create({
+    latitude: 40.7419972,
+    longitude: -73.9246364,
+    userId: 6,
+    word: "in"
+  }),
+  Word.create({
+    latitude: 40.7419972,
+    longitude: -73.9246364,
+    userId: 1,
+    word: "a"
+  }),
+  Word.create({
+    latitude: 40.7419972,
+    longitude: -73.9246364,
+    userId: 2,
+    word: "world"
+  }),
+  Word.create({
+    latitude: 40.7419972,
+    longitude: -73.9246364,
+    userId: 2,
+    word: "thats"
+  }),
+  Word.create({
+    latitude: 40.7419972,
+    longitude: -73.9246364,
+    userId: 3,
+    word: "so"
+  }),
+  Word.create({
+    latitude: 40.7419972,
+    longitude: -73.9246364,
+    userId: 4,
+    word: "cold"
+  })
+])
 
 seed()
   .then(() => {
