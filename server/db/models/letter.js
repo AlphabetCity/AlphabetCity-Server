@@ -18,3 +18,14 @@ const Letter = db.define('letter', {
 })
 
 module.exports = Letter
+
+
+//instead of possible model
+// class Letter {
+//   constructor(){
+
+//   }
+//   generateRandom(n){
+
+//   }
+// }

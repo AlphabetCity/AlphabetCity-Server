@@ -51,25 +51,39 @@ router.delete('/:userId', (req, res, next) => {
 
 // get all letters for a user, or query to see if hidden (if not hidden, letter is in satchel)
 
-router.get('/:userId/letters', (req, res, next) => {
-  if (req.query.hidden) {
-    Letter.findAll({
+//can use async await.
+router.get('/:userId/letters', async (req, res, next) => {
+  try {
+    let letters = await Letter.findAll({
       where: {
         userId: req.params.userId
       },
       include: [{ model: LetterCategory }]
-    })
-      .then(letters => letters.filter(letter => letter.hidden.toString() === req.query.hidden))
-      .then(selectedLetters => res.json(selectedLetters))
-      .catch(next)
-  } else {
-    Letter.findAll({
-      where: {
-        userId: req.params.userId
-      },
-      include: [{ model: LetterCategory }]
-    })
-      .then(letters => res.json(letters))
-      .catch(next)
+    });
+    letters = req.query.hidden ? letters.filter(letter => letter.hidden.toString() === req.query.hidden) : letters;
+    res.json(letters);
+  } catch (err){
+    next(err);
   }
+
+  // if (req.query.hidden) {
+  //   Letter.findAll({
+  //     where: {
+  //       userId: req.params.userId
+  //     },
+  //     include: [{ model: LetterCategory }]
+  //   })
+  //     .then(letters => letters.filter(letter => letter.hidden.toString() === req.query.hidden))
+  //     .then(selectedLetters => res.json(selectedLetters))
+  //     .catch(next)
+  // } else {
+  //   Letter.findAll({
+  //     where: {
+  //       userId: req.params.userId
+  //     },
+  //     include: [{ model: LetterCategory }]
+  //   })
+  //     .then(letters => res.json(letters))
+  //     .catch(next)
+  // }
 })
