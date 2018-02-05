@@ -1,5 +1,6 @@
 const User = require('./user')
 const Letter = require('./letter')
+const Word = require('./word')
 const LetterCategory = require('./letterCategory')
 
 
@@ -12,6 +13,8 @@ LetterCategory.hasMany(Letter)
 Letter.belongsTo(User)
 //Owners will have "getLetters", "setLetters", "createLetter", "addLetter", "addLetters", "removeLetter", "removeLetters", "hasLetter", "hasLetters", and "countLetters"
 User.hasMany(Letter)
+Word.belongsTo(User)
+User.hasMany(Word)
 
 
 /**
@@ -24,5 +27,6 @@ User.hasMany(Letter)
 module.exports = {
   User,
   Letter,
-  LetterCategory
+  LetterCategory,
+  Word
 }
