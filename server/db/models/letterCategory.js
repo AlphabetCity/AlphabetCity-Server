@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
 
-const ItemCategory = db.define('itemCategory', {
+const LetterCategory = db.define('letterCategory', {
   name: {
     type: Sequelize.STRING,
     allowNull: false,
@@ -27,4 +27,4 @@ const ItemCategory = db.define('itemCategory', {
   }
 })
 
-module.exports = ItemCategory
+module.exports = LetterCategory

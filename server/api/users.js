@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { User, Item, ItemCategory } = require('../db/models')
+const { User, Letter, LetterCategory } = require('../db/models')
 module.exports = router
 
 
@@ -52,25 +52,23 @@ router.delete('/:userId', (req, res, next) => {
 
 router.get('/:userId/items', (req, res, next) => {
   if (req.query.hidden) {
-    Item.findAll({
+    Letter.findAll({
       where: {
         userId: req.params.userId
       },
-      include:[{model: ItemCategory}]
+      include: [{ model: LetterCategory }]
     })
       .then(items => items.filter(item => item.hidden.toString() === req.query.hidden))
       .then(selectedItems => res.json(selectedItems))
       .catch(next)
   } else {
-    Item.findAll({
+    Letter.findAll({
       where: {
         userId: req.params.userId
       },
-      include:[{model: ItemCategory}]
+      include: [{ model: LetterCategory }]
     })
-      .then(items => res.json(items))
+      .then(letters => res.json(letters))
       .catch(next)
   }
 })
-
-

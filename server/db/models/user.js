@@ -1,8 +1,8 @@
 const crypto = require('crypto')
 const Sequelize = require('sequelize')
 const db = require('../db')
-const Item = require('./item')
-const ItemCategory = require('./itemCategory')
+const Letter = require('./letter')
+const LetterCategory = require('./letterCategory')
 
 const User = db.define('user', {
   userName: {
@@ -61,10 +61,11 @@ User.encryptPassword = function (plainText, salt) {
     .digest('hex')
 }
 
-User.getUserAndItemsById = function (id) {
+User.getUserAndLettersById = function (id) {
+
   return User.findById(id, {
     include: {
-      model: [Item]
+      model: [Letter]
     }
   })
 }
@@ -79,29 +80,17 @@ const setSaltAndPassword = user => {
   }
 }
 
-const addItems = (user) => {
-
-  return ItemCategory.findAndCountAll()
-    .then(obj => obj.count)
-    .then(count => {
-      let itemCategoryIds = []
-      for (let i = 1; i <= count; i++) {
-        itemCategoryIds.push(i)
-      }
-      return itemCategoryIds
-    })
-    .then(idArray => {
-      idArray.map((id) => {
-        Item.create({ itemCategoryId: id, userId: user.id })
-      })
-    })
-    .catch(err => console.log(err))
+const addLetters = (user) => {
+  for (let i = 0; i < 7; i++) {
+    Letter.create({ letterCategoryId: (Math.floor(Math.random() * 26) + 1), userId: user.id })
+      .catch(err => console.log(err))
+  }
 }
 
 
 // after a user is created, we create one of each item with that user's id (these are the items the user starts the game with)
 User.afterCreate('addItems', (user) => {
-  return addItems(user)
+  return addLetters(user)
 })
 
 
