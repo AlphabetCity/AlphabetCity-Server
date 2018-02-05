@@ -379,8 +379,6 @@ const seed = async () => {
 }
 
 
-
-
 seed()
   .then(() => {
     console.log('closing db connection')

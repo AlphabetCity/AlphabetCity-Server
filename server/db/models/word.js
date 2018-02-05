@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
 
-const Word = db.define('letter', {
+const Word = db.define('word', {
   latitude: {
     type: Sequelize.DOUBLE
   },
