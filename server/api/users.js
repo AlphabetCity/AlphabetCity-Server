@@ -75,12 +75,10 @@ router.get('/:userId/letters', (req, res, next) => {
 })
 
 router.get('/:userId/words', (req, res, next) => {
-  if (req.query.hidden) {
-    Word.findAll({
-      where: {
-        userId: req.params.userId
-      }
-    })
+  Word.findAll({
+    where: {
+      userId: req.params.userId
+    }
       .then(words => res.json(words))
       .catch(next)
   }
