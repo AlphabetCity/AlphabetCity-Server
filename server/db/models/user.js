@@ -88,8 +88,8 @@ const addLetters = (user) => {
 }
 
 
-// after a user is created, we create one of each item with that user's id (these are the items the user starts the game with)
-User.afterCreate('addItems', (user) => {
+// after a user is created, we create one of each letter with that user's id (these are the letters the user starts the game with)
+User.afterCreate('addLetters', (user) => {
   return addLetters(user)
 })
 

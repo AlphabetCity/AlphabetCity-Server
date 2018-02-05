@@ -1,26 +1,26 @@
 const router = require('express').Router()
-const { Item, ItemCategory } = require('../db/models')
+const { Letter, LetterCategory } = require('../db/models')
 module.exports = router
 
 
 router.get('/', (req, res, next) => {
   if (req.query.hidden) {
-    Item.findAll({ include: [{ model: ItemCategory }]})
-      .then(allItems => allItems.filter(item => item.hidden.toString() === req.query.hidden))
-      .then(selectedItems => res.json(selectedItems))
+    Letter.findAll({ include: [{ model: LetterCategory }] })
+      .then(allLetters => allLetters.filter(letter => letter.hidden.toString() === req.query.hidden))
+      .then(selectedLetters => res.json(selectedLetters))
       .catch(next)
   } else {
-    Item.findAll({ include: [{ model: ItemCategory }]})
-      .then((userItems) => res.json(userItems))
+    Letter.findAll({ include: [{ model: LetterCategory }] })
+      .then((userLetters) => res.json(userLetters))
       .catch(next)
   }
 })
 
-// update single item
-router.put('/:itemId', (req, res, next) => {
-  Item.update(req.body, {
+// update single letter
+router.put('/:letterId', (req, res, next) => {
+  Letter.update(req.body, {
     where: {
-      id: req.params.itemId
+      id: req.params.letterId
     }
   })
     .then(() => res.sendStatus(200))
