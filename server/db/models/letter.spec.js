@@ -15,22 +15,111 @@ describe('User Letter join table', () => {
 
     beforeEach(async () => {
 
-      const letters = await Promise.all([
+      const letterCategories = await Promise.all([
         LetterCategory.create({
-          name: 'Peach',
-          points: 1,
-          threeJS: 'https://www.cgtrader.com/free-3d-models/food/fruit/apricot-lowpoly'
+          name: 'A',
+          points: 1
         }),
         LetterCategory.create({
-          name: 'Apple',
-          points: 14,
-          threeJS: 'https://www.cgtrader.com/free-3d-print-models/art/scans-replicas/red-apple--3'
+          name: 'B',
+          points: 3
         }),
         LetterCategory.create({
-          name: 'Strawberry',
-          points: 98,
-          threeJS: 'https://www.cgtrader.com/free-3d-models/food/fruit/strawberry-e58fc22b7ea3c5bc232d0c2229c6971c'
-        })
+          name: 'C',
+          points: 3
+        }),
+        LetterCategory.create({
+          name: 'D',
+          points: 2
+        }),
+        LetterCategory.create({
+          name: 'E',
+          points: 1
+        }),
+        LetterCategory.create({
+          name: 'F',
+          points: 4
+        }),
+        LetterCategory.create({
+          name: 'G',
+          points: 2
+        }),
+        LetterCategory.create({
+          name: 'H',
+          points: 4
+        }),
+        LetterCategory.create({
+          name: 'I',
+          points: 1
+        }),
+        LetterCategory.create({
+          name: 'J',
+          points: 8
+        }),
+        LetterCategory.create({
+          name: 'K',
+          points: 5
+        }),
+        LetterCategory.create({
+          name: 'L',
+          points: 1
+        }),
+        LetterCategory.create({
+          name: 'M',
+          points: 3
+        }),
+        LetterCategory.create({
+          name: 'N',
+          points: 1
+        }),
+        LetterCategory.create({
+          name: 'O',
+          points: 1
+        }),
+        LetterCategory.create({
+          name: 'P',
+          points: 3
+        }),
+        LetterCategory.create({
+          name: 'Q',
+          points: 10
+        }),
+        LetterCategory.create({
+          name: 'R',
+          points: 1
+        }),
+        LetterCategory.create({
+          name: 'S',
+          points: 1
+        }),
+        LetterCategory.create({
+          name: 'T',
+          points: 1
+        }),
+        LetterCategory.create({
+          name: 'U',
+          points: 1
+        }),
+        LetterCategory.create({
+          name: 'V',
+          points: 4
+        }),
+        LetterCategory.create({
+          name: 'W',
+          points: 4
+        }),
+        LetterCategory.create({
+          name: 'X',
+          points: 8
+        }),
+        LetterCategory.create({
+          name: 'Y',
+          points: 4
+        }),
+        LetterCategory.create({
+          name: 'Z',
+          points: 10
+        }),
       ])
 
       const users = await Promise.all([
