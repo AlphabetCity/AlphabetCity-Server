@@ -79,7 +79,7 @@ router.get('/:userId/words', (req, res, next) => {
     where: {
       userId: req.params.userId
     }
-      .then(words => res.json(words))
-      .catch(next)
-  }
+  })
+    .then(words => res.json(words))
+    .catch(next)
 })
