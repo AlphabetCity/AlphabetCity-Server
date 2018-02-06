@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
-const dictionary = require('../utils/dictionary')
+const dictionary = require('../../utils/dictionary')
+
 
 const Word = db.define('word', {
   latitude: {

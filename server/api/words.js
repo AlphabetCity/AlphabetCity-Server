@@ -7,5 +7,11 @@ router.get('/', (req, res, next) => {
   Word.findAll()
     .then(words => res.json(words))
     .catch(next)
-}
+  }
 )
+
+router.post('/', (req, res, next) => {
+  Word.create(req.body)
+    .then(word => res.json(word))
+    .catch(next)
+})

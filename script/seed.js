@@ -291,13 +291,13 @@ const seed = async () => {
       latitude: 40.7419972,
       longitude: -73.9246364,
       userId: 1,
-      word: "How"
+      word: "can"
     }),
     Word.create({
       latitude: 40.7419972,
       longitude: -73.9246364,
       userId: 2,
-      word: "can"
+      word: "aa"
     }),
     Word.create({
       latitude: 40.7419972,
@@ -327,7 +327,7 @@ const seed = async () => {
       latitude: 40.7419972,
       longitude: -73.9246364,
       userId: 4,
-      word: "standing"
+      word: "stand"
     }),
     Word.create({
       latitude: 40.7419972,
@@ -345,7 +345,7 @@ const seed = async () => {
       latitude: 40.7419972,
       longitude: -73.9246364,
       userId: 1,
-      word: "a"
+      word: "an"
     }),
     Word.create({
       latitude: 40.7419972,
@@ -357,7 +357,7 @@ const seed = async () => {
       latitude: 40.7419972,
       longitude: -73.9246364,
       userId: 2,
-      word: "thats"
+      word: "that"
     }),
     Word.create({
       latitude: 40.7419972,
@@ -373,7 +373,7 @@ const seed = async () => {
     })
   ])
 
-  console.log(`seeded ${words.length} letter categories`)
+  console.log(`seeded ${words.length} words`)
 
 
 }
