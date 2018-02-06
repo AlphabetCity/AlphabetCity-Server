@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
+const dictionary = require('../utils/dictionary')
 
 const Word = db.define('word', {
   latitude: {
@@ -9,7 +10,8 @@ const Word = db.define('word', {
     type: Sequelize.DOUBLE
   },
   word: {
-    type: Sequelize.STRING
+    type: Sequelize.STRING,
+    validate: { isIn: [dictionary] }
   },
 }
 )
