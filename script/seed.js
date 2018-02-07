@@ -290,7 +290,7 @@ const seed = async () => {
         }
       })
     ,
-     Letter.update({
+    Letter.update({
       latitude: 40.9101,
       longitude: -74.8383
     },

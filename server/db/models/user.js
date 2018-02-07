@@ -3,6 +3,7 @@ const Sequelize = require('sequelize')
 const db = require('../db')
 const Letter = require('./letter')
 const LetterCategory = require('./letterCategory')
+const ProfilePic = require('./../../public/profile.png')
 
 const User = db.define('user', {
   userName: {
@@ -16,7 +17,7 @@ const User = db.define('user', {
   },
   icon: {
     type: Sequelize.STRING,
-    defaultValue: 'http://gazettereview.com/wp-content/uploads/2016/09/what-happened-to-lance-bass-nsync-203x300.png'
+    defaultValue: ProfilePic
   },
   email: {
     type: Sequelize.STRING,
