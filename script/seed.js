@@ -279,6 +279,237 @@ const seed = async () => {
           id: 11
         }
       })
+    ,
+    Letter.update({
+      latitude: 40.8969,
+      longitude: -75.0898
+    },
+      {
+        where: {
+          id: 12
+        }
+      })
+    ,
+     Letter.update({
+      latitude: 40.9101,
+      longitude: -74.8383
+    },
+      {
+        where: {
+          id: 13
+        }
+      })
+    ,
+    Letter.update({
+      latitude: 40.0234,
+      longitude: -73.1234
+    },
+      {
+        where: {
+          id: 14
+        }
+      })
+    ,
+    Letter.update({
+      latitude: 41.7755,
+      longitude: -72.8383
+    },
+      {
+        where: {
+          id: 15
+        }
+      })
+    ,
+    Letter.update({
+      latitude: 42.6969,
+      longitude: -70.9876
+    },
+      {
+        where: {
+          id: 16
+        }
+      })
+    ,
+    Letter.update({
+      latitude: 46.0987,
+      longitude: -80.6918
+    },
+      {
+        where: {
+          id: 17
+        }
+      })
+    ,
+    Letter.update({
+      latitude: 45.0324,
+      longitude: -81.5678
+    },
+      {
+        where: {
+          id: 18
+        }
+      })
+    ,
+    Letter.update({
+      latitude: 45.0324,
+      longitude: -81.5678
+    },
+      {
+        where: {
+          id: 19
+        }
+      })
+    ,
+    Letter.update({
+      latitude: 43.8735,
+      longitude: -82.87492
+    },
+      {
+        where: {
+          id: 20
+        }
+      })
+    ,
+    Letter.update({
+      latitude: 42.8748,
+      longitude: -81.5454
+    },
+      {
+        where: {
+          id: 21
+        }
+      })
+    ,
+    Letter.update({
+      latitude: 40.6055,
+      longitude: -71.7392
+    },
+      {
+        where: {
+          id: 22
+        }
+      })
+    ,
+    Letter.update({
+      latitude: 45.5273,
+      longitude: -69.9119
+    },
+      {
+        where: {
+          id: 23
+        }
+      })
+    ,
+    Letter.update({
+      latitude: 46.0987,
+      longitude: -79.0033
+    },
+      {
+        where: {
+          id: 24
+        }
+      })
+    ,
+    Letter.update({
+      latitude: 45.0626,
+      longitude: -79.5022
+    },
+      {
+        where: {
+          id: 25
+        }
+      })
+    ,
+    Letter.update({
+      latitude: 42.929,
+      longitude: -80.5398
+    },
+      {
+        where: {
+          id: 26
+        }
+      })
+    ,
+    Letter.update({
+      latitude: 40.8763,
+      longitude: -83.98237
+    },
+      {
+        where: {
+          id: 27
+        }
+      })
+    ,
+    Letter.update({
+      latitude: 39.5625,
+      longitude: -69.5653
+    },
+      {
+        where: {
+          id: 28
+        }
+      })
+    ,
+    Letter.update({
+      latitude: 43.3456,
+      longitude: -73.5455
+    },
+      {
+        where: {
+          id: 29
+        }
+      })
+    ,
+    Letter.update({
+      latitude: 43.5675,
+      longitude: -73.5675
+    },
+      {
+        where: {
+          id: 30
+        }
+      })
+    ,
+    Letter.update({
+      latitude: 41.536,
+      longitude: -74.544
+    },
+      {
+        where: {
+          id: 31
+        }
+      })
+    ,
+    Letter.update({
+      latitude: 40.6749,
+      longitude: -74.3425
+    },
+      {
+        where: {
+          id: 32
+        }
+      })
+    ,
+    Letter.update({
+      latitude: 41.54665,
+      longitude: -73.4353
+    },
+      {
+        where: {
+          id: 33
+        }
+      })
+    ,
+    Letter.update({
+      latitude: 40.5625,
+      longitude: -72.6577
+    },
+      {
+        where: {
+          id: 34
+        }
+      })
+
   ])
 
   console.log(`updated ${letters.length}  letters`)
