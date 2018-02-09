@@ -140,7 +140,7 @@ const seed = async () => {
       score: 3422
     }),
     User.create({
-      userName: 'Evan Bacon',
+      userName: 'EvanBacon',
       email: 'robin@email.com',
       password: '123',
       score: 8443
@@ -176,7 +176,7 @@ const seed = async () => {
       score: 2343
     }),
     User.create({
-      userName: 'Josh Luria',
+      userName: 'JoshLuria',
       email: 'allen@email.com',
       password: '123',
       score: 9549
