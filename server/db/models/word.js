@@ -14,6 +14,10 @@ const Word = db.define('word', {
     type: Sequelize.STRING,
     validate: { isIn: [dictionary] }
   },
+  score: {
+    type: Sequelize.INTEGER,
+    defaultValue: 0
+  }
 }
 )
 
