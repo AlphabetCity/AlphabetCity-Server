@@ -122,54 +122,64 @@ const seed = async () => {
 
   const users = await Promise.all([
     User.create({
-      userName: 'BigSean',
+      userName: 'Omri',
       email: 'cody@email.com',
-      password: '123'
+      password: '123',
+      score: 549
     }),
     User.create({
-      userName: 'MurphyLee',
+      userName: 'Corey',
       email: 'murphy@email.com',
-      password: '123'
+      password: '123',
+      score: 2329
     }),
     User.create({
-      userName: 'EetaiMagic',
+      userName: 'Cassio',
       email: 'eetai@email.com',
-      password: '123'
+      password: '123',
+      score: 3422
     }),
     User.create({
-      userName: 'RobinCello',
+      userName: 'Evan Bacon',
       email: 'robin@email.com',
-      password: '123'
+      password: '123',
+      score: 8443
     }),
     User.create({
-      userName: 'AbelCheese',
+      userName: `Abel`,
       email: 'abel@email.com',
-      password: '123'
+      password: '123',
+      score: 5234
     }),
     User.create({
-      userName: 'VanessaCoffee',
+      userName: 'Daniela',
       email: 'vanessa@email.com',
-      password: '123'
+      password: '123',
+      score: 500
     }),
     User.create({
-      userName: 'JacquesGreene',
+      userName: 'Diana',
       email: 'jacque@email.com',
-      password: '123'
+      password: '123',
+      score: 783
     }),
     User.create({
-      userName: 'Diana28',
+      userName: 'Allen',
       email: 'diana@email.com',
-      password: '123'
+      password: '123',
+      score: 200
     }),
     User.create({
-      userName: 'Daniela52',
+      userName: 'Eetai',
       email: 'daniela@email.com',
-      password: '123'
+      password: '123',
+      score: 2343
     }),
     User.create({
-      userName: 'Allen83',
+      userName: 'Josh Luria',
       email: 'allen@email.com',
-      password: '123'
+      password: '123',
+      score: 9549
     })
   ])
 
@@ -290,7 +300,7 @@ const seed = async () => {
         }
       })
     ,
-     Letter.update({
+    Letter.update({
       latitude: 40.9101,
       longitude: -74.8383
     },
