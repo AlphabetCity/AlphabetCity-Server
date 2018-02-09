@@ -82,7 +82,7 @@ const setSaltAndPassword = user => {
 
 const addLetters = (user) => {
   for (let i = 0; i < 7; i++) {
-    Letter.create({ letterCategoryId: (Math.floor(Math.random() * 26) + 1), userId: user.id })
+    Letter.create({ letterCategoryId: 27, userId: user.id })
       .catch(err => console.log(err))
   }
 }

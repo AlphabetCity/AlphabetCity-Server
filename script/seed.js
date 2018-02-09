@@ -116,6 +116,10 @@ const seed = async () => {
       name: 'Z',
       points: 10
     }),
+    LetterCategory.create({
+      name: 'Alphabet City',
+      points: 10
+    })
   ])
 
   console.log(`seeded ${letterCategories.length} letter categories`)
