@@ -187,8 +187,8 @@ const seed = async () => {
 
   const letters = await Promise.all([
     Letter.update({
-      latitude: 40.704761,
-      longitude: -74.009133
+      latitude: 40.7047708,
+      longitude: - 74.0091797
     },
       {
         where: {
@@ -196,8 +196,8 @@ const seed = async () => {
         }
       }),
     Letter.update({
-      latitude: 40.7829,
-      longitude: -73.9654
+      latitude: 40.7047905,
+      longitude: - 74.0091391
     },
       {
         where: {
@@ -205,8 +205,8 @@ const seed = async () => {
         }
       }),
     Letter.update({
-      latitude: 40.7589,
-      longitude: -73.9851
+      latitude: 40.7041721,
+      longitude: - 74.0099733
     },
       {
         where: {
@@ -214,8 +214,8 @@ const seed = async () => {
         }
       }),
     Letter.update({
-      latitude: 40.705576,
-      longitude: -74.013421
+      latitude: 40.7059708,
+      longitude: - 74.0191298
     },
       {
         where: {
@@ -223,8 +223,8 @@ const seed = async () => {
         }
       }),
     Letter.update({
-      latitude: 40.7532,
-      longitude: -73.9823
+      latitude: 40.7047928,
+      longitude: - 74.0091797
     },
       {
         where: {
@@ -232,7 +232,7 @@ const seed = async () => {
         }
       }),
     Letter.update({
-      latitude: 40.767997,
+      latitude: 40.767985,
       longitude: -73.981934
     },
       {
@@ -529,88 +529,46 @@ const seed = async () => {
 
   const words = await Promise.all([
     Word.create({
-      latitude: 40.7419972,
-      longitude: -73.9246364,
+      latitude: 40.7047786,
+      longitude: - 74.0091574,
       userId: 1,
-      word: "can"
+      word: "giraffe"
     }),
     Word.create({
-      latitude: 40.7419972,
-      longitude: -73.9246364,
+      latitude: 40.7047786,
+      longitude: - 74.0091574,
       userId: 2,
-      word: "aa"
+      word: "dancing"
     }),
     Word.create({
-      latitude: 40.7419972,
-      longitude: -73.9246364,
+      latitude: 40.7047786,
+      longitude: - 74.0091574,
       userId: 3,
-      word: "you"
+      word: "friend"
     }),
     Word.create({
-      latitude: 40.7419972,
-      longitude: -73.9246364,
+      latitude: 40.7047786,
+      longitude: - 74.0091574,
       userId: 1,
-      word: "just"
+      word: "happy"
     }),
     Word.create({
-      latitude: 40.7419972,
-      longitude: -73.9246364,
+      latitude: 40.7047786,
+      longitude: - 74.0091574,
       userId: 2,
-      word: "leave"
+      word: "coding"
     }),
     Word.create({
-      latitude: 40.7419972,
-      longitude: -73.9246364,
+      latitude: 40.7047786,
+      longitude: - 74.0091574,
       userId: 3,
-      word: "me"
+      word: "thunder"
     }),
     Word.create({
-      latitude: 40.7419972,
-      longitude: -73.9246364,
+      latitude: 40.7047786,
+      longitude: - 74.0091574,
       userId: 4,
-      word: "stand"
-    }),
-    Word.create({
-      latitude: 40.7419972,
-      longitude: -73.9246364,
-      userId: 5,
-      word: "alone"
-    }),
-    Word.create({
-      latitude: 40.7419972,
-      longitude: -73.9246364,
-      userId: 6,
-      word: "in"
-    }),
-    Word.create({
-      latitude: 40.7419972,
-      longitude: -73.9246364,
-      userId: 1,
-      word: "an"
-    }),
-    Word.create({
-      latitude: 40.7419972,
-      longitude: -73.9246364,
-      userId: 2,
-      word: "world"
-    }),
-    Word.create({
-      latitude: 40.7419972,
-      longitude: -73.9246364,
-      userId: 2,
-      word: "that"
-    }),
-    Word.create({
-      latitude: 40.7419972,
-      longitude: -73.9246364,
-      userId: 3,
-      word: "so"
-    }),
-    Word.create({
-      latitude: 40.7419972,
-      longitude: -73.9246364,
-      userId: 4,
-      word: "cold"
+      word: "summer"
     })
   ])
 
