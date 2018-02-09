@@ -17,7 +17,8 @@ const User = db.define('user', {
   },
   icon: {
     type: Sequelize.STRING,
-    defaultValue: ProfilePic
+    defaultValue: 'https://twirpz.files.wordpress.com/2015/06/twitter-avi-gender-balanced-figure.png'
+
   },
   email: {
     type: Sequelize.STRING,
