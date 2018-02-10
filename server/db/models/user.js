@@ -2,7 +2,6 @@ const crypto = require('crypto')
 const Sequelize = require('sequelize')
 const db = require('../db')
 const Letter = require('./letter')
-const LetterCategory = require('./letterCategory')
 
 const User = db.define('user', {
   userName: {
@@ -13,10 +12,6 @@ const User = db.define('user', {
       isAlphanumeric: true,
       len: [2, 15]
     }
-  },
-  icon: {
-    type: Sequelize.STRING,
-  //   defaultValue: 'http://gazettereview.com/wp-content/uploads/2016/09/what-happened-to-lance-bass-nsync-203x300.png'
   },
   email: {
     type: Sequelize.STRING,
