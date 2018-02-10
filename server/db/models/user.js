@@ -16,7 +16,7 @@ const User = db.define('user', {
   },
   icon: {
     type: Sequelize.STRING,
-    defaultValue: 'http://gazettereview.com/wp-content/uploads/2016/09/what-happened-to-lance-bass-nsync-203x300.png'
+  //   defaultValue: 'http://gazettereview.com/wp-content/uploads/2016/09/what-happened-to-lance-bass-nsync-203x300.png'
   },
   email: {
     type: Sequelize.STRING,
@@ -81,12 +81,13 @@ const setSaltAndPassword = user => {
 }
 
 const addLetters = (user) => {
+  const letterIdFrequency = [1,1,1,1,1,1,1,1,1,2,2,3,3,4,4,4,4,5,5,5,5,5,5,5,5,5,5,5,5,6,6,7,7,7,8,8,9,9,9,9,9,9,9,9,9,10,11,12,12,12,12,13,13,14,14,14,14,14,14,15,15,15,15,15,15,15,15,16,16,17,18,18,18,18,18,18,19,19,19,19,20,20,20,20,20,20,21,21,21,21,22,22,23,23,24,25,25,26]
+
   for (let i = 0; i < 7; i++) {
-    Letter.create({ letterCategoryId: (Math.floor(Math.random() * 26) + 1), userId: user.id })
+    Letter.create({ letterCategoryId: letterIdFrequency[(Math.floor(Math.random() * 97) + 1)], userId: user.id })
       .catch(err => console.log(err))
   }
 }
-
 
 // after a user is created, we create one of each letter with that user's id (these are the letters the user starts the game with)
 User.afterCreate('addLetters', (user) => {
