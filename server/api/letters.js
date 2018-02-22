@@ -19,10 +19,14 @@ router.get('/', (req, res, next) => {
 // update single letter
 router.put('/:letterId', (req, res, next) => {
   Letter.update(req.body, {
-    where: {
-      id: req.params.letterId
-    }
+    where: { id: req.params.letterId }
   })
-    .then(() => res.sendStatus(200))
+    .then(() => {
+      return Letter.findOne({
+        where: { id: req.params.letterId },
+        include: [{ model: LetterCategory }]
+      })
+    })
+    .then(letter => res.json(letter))
     .catch(next)
 })
