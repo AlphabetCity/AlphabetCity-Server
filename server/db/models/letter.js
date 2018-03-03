@@ -8,6 +8,12 @@ const Letter = db.define('letter', {
   longitude: {
     type: Sequelize.DOUBLE
   },
+  displacementDistance: {
+    type: Sequelize.DOUBLE
+  },
+  displacementBearing: {
+    type: Sequelize.DOUBLE
+  },
   hidden: {
     type: Sequelize.VIRTUAL,
     get() {
