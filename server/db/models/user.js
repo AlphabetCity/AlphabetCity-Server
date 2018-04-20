@@ -3,6 +3,7 @@ const Sequelize = require('sequelize')
 const db = require('../db')
 const Letter = require('./letter')
 const LetterCategory = require('./letterCategory')
+const { getRandomLetterId } = require('../../utils/letterIdFrequency')
 
 const User = db.define('user', {
   userName: {
@@ -77,11 +78,6 @@ const setSaltAndPassword = user => {
 }
 
 const addLetters = async user => {
-  const letterIdFrequency = [1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 3, 3, 4, 4, 4, 4,
-    5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 7, 7, 7, 8, 8, 9, 9, 9, 9, 9, 9,
-    9, 9, 9, 10, 11, 12, 12, 12, 12, 13, 13, 14, 14, 14, 14, 14, 14, 15, 15, 15,
-    15, 15, 15, 15, 15, 16, 16, 17, 18, 18, 18, 18, 18, 18, 19, 19, 19, 19, 20,
-    20, 20, 20, 20, 20, 21, 21, 21, 21, 22, 22, 23, 23, 24, 25, 25, 26]
 
   let letterCategoryId,
       letter,
@@ -90,10 +86,7 @@ const addLetters = async user => {
 
   try {
     for (let i = 0; i < 7; i++) {
-      letterCategoryId =
-        letterIdFrequency[
-          Math.floor(Math.random() * letterIdFrequency.length) + 1
-        ]
+      letterCategoryId = getRandomLetterId()
       letter = await LetterCategory.findById(letterCategoryId)
       displacementDistance = Math.random() * letter.points
       displacementBearing = Math.random() * 360
